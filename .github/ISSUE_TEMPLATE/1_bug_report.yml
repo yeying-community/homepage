@@ -1,5 +1,5 @@
 name: '🐛 Bug Report[反馈缺陷]'
-# version V1.0  update on 20251207
+# version V1.1  update on 20251208
 description: 'Report an bug[反馈一个问题/缺陷]'
 title: '[Bug Report] '
 labels: ['bug']
@@ -17,7 +17,7 @@ body:
       required: true
   - type: input
     attributes:
-      label: '📌 Version'
+      label: '📚 Version'
     validations:
       required: true
   - type: dropdown
@@ -34,7 +34,7 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: '🐛 Bug Description[问题描述]'
+      label: '📖 Bug Description[问题描述]'
       description: A clear and concise description of the bug, if the above option is `Other`, please also explain in detail.[请提供一个清晰且简洁的问题描述。]
     validations:
       required: true
