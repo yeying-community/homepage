@@ -7,6 +7,7 @@ import { useState } from 'react';
 export default function Navigation() {
   const pathname = usePathname();
   const [showSolutionsMenu, setShowSolutionsMenu] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
     { name: '线下产品', path: '/offline' },
@@ -88,23 +89,58 @@ export default function Navigation() {
           <button
             type="button"
             className="inline-flex items-center justify-center p-2 rounded-md text-gray-700"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">打开主菜单</span>
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
+            {mobileMenuOpen ? (
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            )}
           </button>
         </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200">
+            <div className="px-5 py-4 space-y-1">
+              {navItems.map((item) => (
+                item.hasDropdown ? (
+                  <div key={item.path} className="space-y-1">
+                    <div className="block px-3 py-2 text-base font-semibold text-gray-900">
+                      {item.name}
+                    </div>
+                    {item.subItems?.map((subItem) => (
+                      <Link
+                        key={subItem.path}
+                        href={subItem.path}
+                        className="block pl-6 pr-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.path}
+                    href={item.path}
+                    className={`block px-3 py-2 text-base font-semibold ${
+                      pathname === item.path ? 'text-gray-900' : 'text-gray-600'
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );
