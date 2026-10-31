@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1b2a" />
+    <meta id="meta-description" name="description" data-i18n-content="docs_meta_description" content="夜莺钱包官方使用手册：安全安装、备份恢复、钱包身份登录和 DApp 接入。" />
+    <meta id="og-title" property="og:title" data-i18n-content="docs_page_title" content="夜莺钱包官方文档" />
+    <meta id="og-description" property="og:description" data-i18n-content="docs_og_description" content="在 wallet.yeying.pub 阅读夜莺钱包官方使用手册。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wallet.yeying.pub/docs/" />
+    <link rel="canonical" href="https://wallet.yeying.pub/docs/" />
+    <link rel="icon" href="../assets/wallet-icon.png" type="image/png" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="docs.css" />
+    <title data-i18n="docs_page_title">夜莺钱包官方文档</title>
+  </head>
+  <body class="docs-body">
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+
+    <header class="site-header docs-header">
+      <div class="shell header-inner">
+        <a class="brand" href="../" aria-label="夜莺钱包首页" data-i18n-aria="brand_home">
+          <img src="../assets/wallet-icon.png" alt="" width="38" height="38" />
+          <span>
+            <strong data-i18n="brand_name">夜莺钱包</strong>
+            <small data-i18n="brand_subtitle">YEYING WALLET</small>
+          </span>
+        </a>
+        <nav class="docs-top-nav" aria-label="文档导航" data-i18n-aria="docs_navigation">
+          <a href="../" data-i18n="docs_nav_home">官网首页</a>
+          <a href="https://node.yeying.pub/" target="_blank" rel="noreferrer" data-i18n="nav_get_wallet">获取钱包</a>
+        </nav>
+        <button class="language-toggle" id="language-toggle" type="button" aria-label="切换到 English" data-i18n-aria="language_switch_aria">
+          <span class="language-toggle-current" data-i18n="language_current">中文</span>
+          <span class="language-toggle-divider" aria-hidden="true">/</span>
+          <span class="language-toggle-other" data-i18n="language_other">EN</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content" class="docs-main">
+      <div class="shell docs-shell">
+        <div class="docs-heading">
+          <p class="eyebrow"><span class="eyebrow-mark"></span><span data-i18n="docs_eyebrow">夜莺钱包官方文档</span></p>
+          <h1 data-i18n="docs_title">夜莺钱包使用手册</h1>
+          <p class="docs-lede" data-i18n="docs_lede">在 wallet.yeying.pub 阅读钱包的安全使用指南。这里介绍安装、备份恢复、钱包身份登录和应用接入；源码与完整协议另附官方仓库入口。</p>
+          <div class="docs-meta">
+            <span data-i18n="docs_maintained">由夜莺钱包团队维护</span>
+            <span data-i18n="docs_updated">以当前已发布的钱包版本为准</span>
+          </div>
+        </div>
+
+        <div class="docs-layout">
+          <nav class="docs-toc" aria-label="手册目录" data-i18n-aria="docs_toc_label">
+            <a href="#start" data-i18n="docs_toc_start">开始使用</a>
+            <a href="#wallet-essentials" data-i18n="docs_toc_wallet">日常使用</a>
+            <a href="#local-keys" data-i18n="docs_toc_security">安全与密钥</a>
+            <a href="#recovery" data-i18n="docs_toc_recovery">备份与恢复</a>
+            <a href="#identity" data-i18n="docs_toc_identity">钱包身份登录</a>
+            <a href="#developers" data-i18n="docs_toc_developers">DApp 接入</a>
+            <a href="#help" data-i18n="docs_toc_help">故障排查</a>
+          </nav>
+
+          <article class="docs-article">
+            <section id="start" class="docs-section">
+              <h2 data-i18n="docs_start_title">安装与创建钱包</h2>
+              <p data-i18n="docs_start_intro">从夜莺官方入口打开 Node 应用中心，按页面提供的安装方式获取钱包扩展。安装后将扩展固定到浏览器工具栏，再打开钱包创建新账户或导入已有账户。</p>
+              <ol>
+                <li data-i18n="docs_start_step_one">确认浏览器地址为官方域名 wallet.yeying.pub 或 node.yeying.pub，再从 Node 应用中心进入钱包。</li>
+                <li data-i18n="docs_start_step_two">创建钱包时设置本机密码，并按钱包提示完成助记词备份；导入钱包时核对恢复后的账户地址。</li>
+                <li data-i18n="docs_start_step_three">首次使用前先确认当前网络、账户地址和安全备份，再进行连接或转账。</li>
+              </ol>
+              <a class="docs-action" href="https://node.yeying.pub/" target="_blank" rel="noreferrer" data-i18n="docs_open_node">打开 Node 应用中心</a>
+            </section>
+
+            <section id="wallet-essentials" class="docs-section">
+              <h2 data-i18n="docs_wallet_title">账户、网络与转账</h2>
+              <ul>
+                <li data-i18n="docs_wallet_account">从主页面的账户区域切换账户或打开账户管理；复制地址或查看二维码前，先核对当前账户。</li>
+                <li data-i18n="docs_wallet_network">收款和转账前确认当前网络。相同格式的 EVM 地址不代表资产属于同一条链。</li>
+                <li data-i18n="docs_wallet_receive">收款时向对方提供正确网络下的账户地址，并先用小额转账测试新地址或大额收款。</li>
+                <li data-i18n="docs_wallet_send">转账前核对网络、资产、接收地址、金额和手续费。发送 ERC-20 通证也需要对应网络的原生资产支付 gas。</li>
+                <li data-i18n="docs_wallet_site_access">可在“网站管理”查看和撤销 DApp 授权；撤销授权不会影响链上资产。</li>
+              </ul>
+            </section>
+
+            <section id="local-keys" class="docs-section">
+              <h2 data-i18n="docs_security_title">安全与密钥</h2>
+              <div class="docs-warning">
+                <strong data-i18n="docs_security_warning_title">助记词和私钥就是资产控制权</strong>
+                <p data-i18n="docs_security_warning_body">不要把助记词、私钥或钱包密码发送给任何人，也不要输入到网页、客服表单、聊天工具或云文档。夜莺支持人员不会索取这些信息。</p>
+              </div>
+              <ul>
+                <li data-i18n="docs_security_point_one">钱包密码用于保护本机钱包数据；忘记密码后，必须使用有效备份和对应密码恢复。</li>
+                <li data-i18n="docs_security_point_two">连接网站只会按授权提供账户或身份资料；签名前先检查来源、请求内容和权限范围。</li>
+                <li data-i18n="docs_security_point_three">转账前逐项核对网络、接收地址、资产和金额。首次或大额转账建议先做小额测试。</li>
+              </ul>
+            </section>
+
+            <section id="recovery" class="docs-section">
+              <h2 data-i18n="docs_recovery_title">备份与恢复钱包</h2>
+              <p data-i18n="docs_recovery_intro">账户备份文件和云端密钥托管是不同的恢复入口。普通数据同步不包含私钥，不能代替账户或身份恢复。</p>
+              <h3 data-i18n="docs_file_backup_title">导出加密备份文件</h3>
+              <ol>
+                <li data-i18n="docs_file_backup_step_one">在钱包中打开“账户管理”，选择“导出所有账户”，按提示输入钱包密码。</li>
+                <li data-i18n="docs_file_backup_step_two">将导出的加密 JSON 文件保存在自己控制的安全位置。文件仍需密码才能恢复，不要公开分享或上传到不可信服务。</li>
+              </ol>
+              <h3 data-i18n="docs_file_restore_title">在新设备恢复</h3>
+              <ol>
+                <li data-i18n="docs_file_restore_step_one">安装夜莺钱包，选择“导入钱包”，切换到“备份文件”，再选择此前导出的 JSON 文件。</li>
+                <li data-i18n="docs_file_restore_step_two">输入导出该文件时使用的钱包密码，等待钱包完成解密、格式和完整性校验。</li>
+                <li data-i18n="docs_file_restore_step_three">解锁后核对账户地址和 Wallet Identity DID。只有地址和 DID 都符合预期后，再继续使用或签名。</li>
+              </ol>
+              <p class="docs-callout" data-i18n="docs_partial_restore_note">如果忘记身份材料仍使用的旧钱包密码，可以选择仅恢复钱包账户；这种情况下原 Wallet Identity 的签名能力不会恢复。请在页面确认恢复结果后再继续。</p>
+              <h3 data-i18n="docs_cloud_restore_title">云端密钥托管恢复</h3>
+              <p data-i18n="docs_cloud_restore_body">如曾主动开启云端密钥托管，在新设备选择“云端恢复钱包”，使用绑定该身份的通行证完成 Node 授权，再输入创建托管记录时使用的原钱包密码。钱包会在本地解密密文并校验地址与身份。托管端只保存加密快照；Passkey 或 Node 授权本身不等于私钥。</p>
+              <p class="docs-callout" data-i18n="docs_restore_note">恢复完成后，使用原 DID 发起一次钱包身份登录，确认 DApp 收到的身份与恢复前一致。不要把 WebDAV 数据同步当作密钥备份。</p>
+            </section>
+
+            <section id="identity" class="docs-section">
+              <h2 data-i18n="docs_identity_title">钱包身份登录</h2>
+              <p data-i18n="docs_identity_intro">钱包身份让你用同一个 DID 登录支持该协议的应用。每个应用必须单独请求所需资料范围，钱包会在确认页展示应用来源和权限。</p>
+              <ol>
+                <li data-i18n="docs_identity_step_one">确认发起请求的网站域名和应用名称。</li>
+                <li data-i18n="docs_identity_step_two">检查它请求的资料范围，例如基础身份、关联钱包、用户名或邮箱；只批准你愿意提供的范围。</li>
+                <li data-i18n="docs_identity_step_three">钱包为当前应用和本次请求生成身份出示证明。应用后端应校验 DID 签名、audience、nonce、scope 和有效期。</li>
+              </ol>
+              <p class="docs-callout" data-i18n="docs_identity_restore_note">恢复钱包后首次身份登录若要求解锁，请在钱包中输入本机密码继续。身份 DID 与恢复前不一致时，先停止操作并检查导入结果。</p>
+            </section>
+
+            <section id="developers" class="docs-section">
+              <h2 data-i18n="docs_developers_title">开发者：接入 DApp</h2>
+              <p data-i18n="docs_developers_intro">地址连接使用 EIP-1193 Provider；钱包身份登录使用 Wallet Identity 协议。站点应在用户操作后发起请求，并由钱包展示确认界面。</p>
+              <pre><code>const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
+
+const presentation = await ethereum.request({
+  method: 'wallet_identity_presentation',
+  params: [{ audience, nonce, scopes }]
+})</code></pre>
+              <p data-i18n="docs_developers_check">后端必须验证签名、应用 audience、一次性 nonce、批准的 scope 和有效期，不能只相信前端返回值。</p>
+              <a class="docs-source-link" href="https://github.com/yeying-community/wallet/tree/main/examples/dapp" target="_blank" rel="noreferrer" data-i18n="docs_dapp_example">DApp 示例源码（GitHub）</a>
+            </section>
+
+            <section id="help" class="docs-section">
+              <h2 data-i18n="docs_help_title">故障排查</h2>
+              <dl class="docs-faq">
+                <dt data-i18n="docs_faq_password_q">备份文件密码不正确</dt>
+                <dd data-i18n="docs_faq_password_a">请使用导出该文件时的钱包密码。它可能与新设备上当前使用的密码不同。</dd>
+                <dt data-i18n="docs_faq_identity_q">恢复后 DID 与原来不同</dt>
+                <dd data-i18n="docs_faq_identity_a">请停止身份登录，确认选中的是恢复出的身份，并重新检查备份文件和账户地址。</dd>
+                <dt data-i18n="docs_faq_provider_q">DApp 检测不到钱包</dt>
+                <dd data-i18n="docs_faq_provider_a">确认钱包扩展已安装并解锁，刷新 DApp 页面，再通过官方入口联系支持人员。不要向任何人发送助记词或私钥。</dd>
+              </dl>
+            </section>
+
+            <section class="docs-section docs-contact">
+              <h2 data-i18n="docs_contact_title">官方入口与技术源站</h2>
+              <p data-i18n="docs_contact_body">钱包官网和用户指南由夜莺官方域名提供。GitHub 用于发布源代码、版本记录和完整技术规范；日常使用请先从本页开始。</p>
+              <div class="docs-contact-links">
+                <a href="../" data-i18n="docs_back_home">夜莺钱包官方网站</a>
+                <a href="https://node.yeying.pub/" target="_blank" rel="noreferrer" data-i18n="docs_node_portal">Node 应用中心</a>
+                <a href="https://github.com/yeying-community/wallet" target="_blank" rel="noreferrer" data-i18n="docs_github_source">GitHub 源码与技术档案</a>
+                <a href="mailto:security@yeying.pub" data-i18n="docs_security_contact">安全问题联系邮箱</a>
+              </div>
+            </section>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner docs-footer-inner">
+        <div class="footer-brand"><img src="../assets/wallet-icon.png" alt="" width="30" height="30" /><span data-i18n="brand_name">夜莺钱包</span></div>
+        <p><span data-i18n="footer_official_site">钱包官方网站 · wallet.yeying.pub</span><br /><span data-i18n="footer_tagline">本地控制密钥，清楚地连接 Web3。</span></p>
+        <div class="footer-links">
+          <a href="../" data-i18n="docs_nav_home">官网首页</a>
+          <a href="https://github.com/yeying-community/wallet" target="_blank" rel="noreferrer" data-i18n="footer_github">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../main.js"></script>
+  </body>
+</html>

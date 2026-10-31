@@ -1,0 +1,3 @@
+Contact: mailto:security@yeying.pub
+Canonical: https://wallet.yeying.pub/.well-known/security.txt
+Preferred-Languages: zh, en
