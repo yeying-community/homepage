@@ -17,4 +17,3 @@ output
 .project-lifecycle-*.json
 .project-execution-*.json
 .project-execution-*/
-.playwright-cli
