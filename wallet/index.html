@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1b2a" />
+    <meta
+      name="description"
+      id="meta-description"
+      content="夜莺钱包：把账户、身份与恢复权交还给你。安全的浏览器钱包和 Web3 身份入口。"
+    />
+    <meta id="og-title" property="og:title" content="夜莺钱包 | 你的密钥，你的身份" />
+    <meta
+      id="og-description"
+      property="og:description"
+      content="本地控制密钥，加密恢复钱包，以钱包身份进入 Web3。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wallet.yeying.pub/" />
+    <meta property="og:image" content="https://wallet.yeying.pub/assets/wallet-icon.png" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://wallet.yeying.pub/" />
+    <link rel="icon" href="assets/wallet-icon.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>夜莺钱包 | 你的密钥，你的身份</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="夜莺钱包首页" data-i18n-aria="brand_home">
+          <img src="assets/wallet-icon.png" alt="" width="38" height="38" />
+          <span>
+            <strong data-i18n="brand_name">夜莺钱包</strong>
+            <small data-i18n="brand_subtitle">YEYING WALLET</small>
+          </span>
+        </a>
+        <nav class="main-nav" aria-label="主导航" data-i18n-aria="main_navigation">
+          <a href="#security" data-i18n="nav_security">安全与恢复</a>
+          <a href="#identity" data-i18n="nav_identity">钱包身份</a>
+          <a href="#developers" data-i18n="nav_developers">开发者</a>
+          <a href="docs/" data-i18n="nav_docs">文档</a>
+        </nav>
+        <button class="language-toggle" id="language-toggle" type="button" aria-label="切换到 English" data-i18n-aria="language_switch_aria">
+          <span class="language-toggle-current" data-i18n="language_current">中文</span>
+          <span class="language-toggle-divider" aria-hidden="true">/</span>
+          <span class="language-toggle-other" data-i18n="language_other">EN</span>
+        </button>
+        <a class="button button-small button-dark" data-install-link href="https://node.yeying.pub/" target="_blank" rel="noreferrer">
+          <span data-i18n="nav_get_wallet">获取钱包</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="shell hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow-light"><span class="eyebrow-mark"></span><span data-i18n="hero_eyebrow">浏览器钱包 · Web3 身份入口</span></p>
+            <h1 id="hero-title"><span data-i18n="hero_title_first">你的密钥，</span><br /><em data-i18n="hero_title_second">你的身份。</em></h1>
+            <p class="hero-lede">
+              <span data-i18n="hero_lede">夜莺钱包把账户控制权留在本地，把恢复做成可验证的过程。连接 DApp、管理资产，也用同一个钱包身份进入可信的 Web3 应用。</span>
+            </p>
+            <div class="hero-actions">
+              <a class="button button-coral" data-install-link href="https://node.yeying.pub/" target="_blank" rel="noreferrer">
+                <span data-i18n="hero_open_node">进入 Node 应用中心</span> <span aria-hidden="true">↗</span>
+              </a>
+              <button class="button button-quiet" id="check-wallet" type="button" data-i18n="hero_check_wallet">检测已安装钱包</button>
+            </div>
+            <p class="hero-note" id="wallet-status" role="status" aria-live="polite">
+              <span class="status-dot status-neutral"></span><span data-i18n="status_checking">正在检查浏览器中的钱包入口…</span>
+            </p>
+          </div>
+
+          <div class="hero-visual" aria-label="钱包本地安全状态示意" data-i18n-aria="wallet_visual_label">
+            <div class="visual-topline">
+              <span data-i18n="visual_keystore">LOCAL KEYSTORE</span>
+              <span class="ready-label"><i></i><span data-i18n="visual_ready">READY</span></span>
+            </div>
+            <div class="visual-logo-wrap">
+              <div class="visual-ring visual-ring-one"></div>
+              <div class="visual-ring visual-ring-two"></div>
+              <img src="assets/wallet-icon.png" alt="夜莺钱包图标" data-i18n-alt="wallet_icon_alt" width="104" height="104" />
+            </div>
+            <div class="visual-address">
+              <span data-i18n="visual_active_account">ACTIVE ACCOUNT</span>
+              <strong>0x7a42…91D8</strong>
+            </div>
+            <div class="visual-lines" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="visual-foot">
+              <span data-i18n="visual_keys_local">KEYS STAY ON DEVICE</span>
+              <span>v1.4.47</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-footer shell" aria-label="安全摘要" data-i18n-aria="security_summary">
+          <span><b>01</b> <span data-i18n="hero_summary_local">本地密钥控制</span></span>
+          <span><b>02</b> <span data-i18n="hero_summary_recovery">AES-GCM 加密恢复</span></span>
+          <span><b>03</b> <span data-i18n="hero_summary_identity">可验证身份登录</span></span>
+        </div>
+      </section>
+
+      <section class="section section-paper" id="security" aria-labelledby="security-title">
+        <div class="shell">
+          <div class="section-heading section-heading-wide">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-mark"></span><span data-i18n="security_eyebrow">先保护资产，再连接世界</span></p>
+              <h2 id="security-title"><span data-i18n="security_title_first">恢复不是一个按钮，</span><br /><span data-i18n="security_title_second">是资产安全的底线。</span></h2>
+            </div>
+            <p class="section-intro">
+              <span data-i18n="security_intro">钱包文件和云端托管都只保存加密快照。Node 不接触助记词或私钥，恢复必须在你的设备上完成解密和完整性校验。</span>
+            </p>
+          </div>
+
+          <div class="principles-grid">
+            <article class="principle">
+              <span class="principle-index">A</span>
+              <h3 data-i18n="security_principle_local_title">密钥留在设备</h3>
+              <p data-i18n="security_principle_local_body">钱包在浏览器本地生成和使用密钥。网站只能通过明确的 Provider 请求获得授权结果。</p>
+              <a href="docs/#local-keys"><span data-i18n="security_principle_local_link">阅读密钥安全说明</span> <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="principle principle-accent">
+              <span class="principle-index">B</span>
+              <h3 data-i18n="security_principle_recovery_title">恢复可验证</h3>
+              <p data-i18n="security_principle_recovery_body">备份文件和云端快照均经过版本、地址、DID 文档和 AES-GCM 完整性检查，失败不会写入部分数据。</p>
+              <a href="docs/#recovery"><span data-i18n="security_principle_recovery_link">查看恢复边界</span> <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="principle">
+              <span class="principle-index">C</span>
+              <h3 data-i18n="security_principle_signing_title">签名看得懂</h3>
+              <p data-i18n="security_principle_signing_body">连接、签名和身份资料请求由钱包审批页展示。每次身份登录都绑定 audience、nonce 和有效期。</p>
+              <a href="docs/#identity"><span data-i18n="security_principle_signing_link">查看身份协议</span> <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-ink" id="identity" aria-labelledby="identity-title">
+        <div class="shell identity-layout">
+          <div class="identity-copy">
+            <p class="eyebrow eyebrow-light"><span class="eyebrow-mark"></span><span data-i18n="identity_eyebrow">钱包身份</span></p>
+            <h2 id="identity-title"><span data-i18n="identity_title_first">一个 DID，</span><br /><span data-i18n="identity_title_second">走进更多应用。</span></h2>
+            <p data-i18n="identity_body">
+              不把邮箱和用户名交给每一个应用重复注册。你可以在授权范围内出示身份资料，应用后端独立验证签名、scope、nonce 和有效期。
+            </p>
+            <a class="text-link text-link-light" href="docs/#identity"><span data-i18n="identity_link">了解无插件身份登录</span> <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="identity-sequence" aria-label="身份登录流程" data-i18n-aria="identity_sequence_label">
+            <div class="sequence-row"><span>01</span><strong data-i18n="identity_step_one_title">选择应用</strong><small data-i18n="identity_step_one_body">应用提出明确的身份请求</small></div>
+            <div class="sequence-line"></div>
+            <div class="sequence-row"><span>02</span><strong data-i18n="identity_step_two_title">确认范围</strong><small data-i18n="identity_step_two_body">钱包展示 scope、网站和用途</small></div>
+            <div class="sequence-line"></div>
+            <div class="sequence-row"><span>03</span><strong data-i18n="identity_step_three_title">验证 Presentation</strong><small data-i18n="identity_step_three_body">应用校验 DID 签名与 nonce</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-paper section-developers" id="developers" aria-labelledby="developers-title">
+        <div class="shell developer-layout">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-mark"></span><span data-i18n="developers_eyebrow">For builders</span></p>
+            <h2 id="developers-title"><span data-i18n="developers_title_first">让应用知道</span><br /><span data-i18n="developers_title_second">如何请求，而不是猜。</span></h2>
+            <p class="section-intro" data-i18n="developers_intro">使用标准 EIP-1193 Provider 连接钱包，使用钱包身份协议完成可验证身份登录。</p>
+            <div class="developer-links">
+              <a class="button button-dark" href="https://github.com/yeying-community/wallet/tree/main/examples/dapp" target="_blank" rel="noreferrer"><span data-i18n="developers_examples">查看 DApp 示例</span> <span aria-hidden="true">↗</span></a>
+              <a class="button button-outline" href="docs/#developers"><span data-i18n="developers_manual">阅读接入手册</span></a>
+            </div>
+          </div>
+          <div class="code-panel" aria-label="Provider 调用示例" data-i18n-aria="code_panel_label">
+            <div class="code-header"><span>provider.request</span><span>JavaScript</span></div>
+            <pre><code><span class="code-keyword">const</span> accounts = <span class="code-keyword">await</span> ethereum.request({
+  method: <span class="code-string">'eth_requestAccounts'</span>
+})
+
+<span class="code-keyword">const</span> presentation = <span class="code-keyword">await</span> ethereum.request({
+  method: <span class="code-string">'wallet_identity_presentation'</span>,
+  params: [{ audience, nonce, scopes }]
+})</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-cta" aria-labelledby="cta-title">
+        <div class="shell cta-layout">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-mark"></span><span data-i18n="cta_eyebrow">开始使用夜莺钱包</span></p>
+            <h2 id="cta-title" data-i18n="cta_title">从一个可信入口开始。</h2>
+          </div>
+          <div class="cta-actions">
+            <a class="button button-coral" data-install-link href="https://node.yeying.pub/" target="_blank" rel="noreferrer"><span data-i18n="cta_open_node">进入 Node 应用中心</span> <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="docs/#local-keys" data-i18n="cta_security">先了解安全设计</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <div class="footer-brand"><img src="assets/wallet-icon.png" alt="" width="30" height="30" /><span data-i18n="brand_name">夜莺钱包</span></div>
+        <p><span data-i18n="footer_official_site">钱包官方网站 · wallet.yeying.pub</span><br /><span data-i18n="footer_tagline">本地控制密钥，清楚地连接 Web3。</span></p>
+        <div class="footer-links">
+          <a href="docs/" data-i18n="footer_docs">官方文档</a>
+          <a href="https://github.com/yeying-community/wallet" target="_blank" rel="noreferrer" data-i18n="footer_github">GitHub</a>
+          <a href="https://node.yeying.pub/" target="_blank" rel="noreferrer" data-i18n="footer_node">Node</a>
+          <a href="mailto:security@yeying.pub" data-i18n="footer_security">安全联系</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

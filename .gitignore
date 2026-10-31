@@ -7,3 +7,13 @@ node_modules
 # Generated files
 .psci
 output
+
+# Project skill local task state
+.project-task.json
+.project-lifecycle.json
+.project-execution.json
+.project-execution/
+.project-task-*.json
+.project-lifecycle-*.json
+.project-execution-*.json
+.project-execution-*/
